@@ -8,31 +8,35 @@ namespace HelloWorld.ConsoleApplication
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            
+            string[] stringArray = { "Hallo", "Welt", "Was geht?" };
+            string gesuchterWert = "Welt";
+
+            var ergebnis = ÜberprüfeObArrayZeichenfolgeEnthält(stringArray, gesuchterWert);
+            Console.WriteLine(ergebnis);
+
+            gesuchterWert = "Foo";
+            ergebnis = ÜberprüfeObArrayZeichenfolgeEnthält(stringArray, gesuchterWert);
+            Console.WriteLine(ergebnis);
+            Console.ReadLine();
         }
 
-        static void IntAlsLong(int wert1)
+        static bool ÜberprüfeObArrayZeichenfolgeEnthält(string[] array, string wert)
         {
-            long longWert = (long)wert1; // Cast (explizite Konvertierung)
-            long longWert2 = Convert.ToInt64(wert1); // Konvertierung mit Hilfsklasse
-            long longWert3 = wert1; // Implizite Konvertierung
+            // Ihr Code folgt hier 
+            bool rückgabewert = false;
+            foreach (string text in array)
+            {
+                if (text == wert)
+                {
+                    rückgabewert = true;
+                    break;
+                }
+            }
+            return rückgabewert;
         }
 
-        static void LongAlsInt(long wert)
-        {
-            int intWert = (int) wert;
-        }
 
-        static void DoubleAlsFloat(double wert)
-        {
-            float floatWert = (float) wert;
-        }
-
-        static void StringZuInt(string text)
-        {
-            int zahl = Convert.ToInt32(text);
-        }
     }
 }
