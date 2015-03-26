@@ -6,37 +6,39 @@ using System.Threading.Tasks;
 
 namespace HelloWorld.ConsoleApplication
 {
+
+
+    public class Beispielklasse
+    {
+        public static int StatischerZähler;
+        public int InstanzZähler;
+
+        public static void ErhöheStatischenZähler()
+        {
+            StatischerZähler++;
+        }
+        public void ErhöheAlleZähler()
+        {
+            StatischerZähler++;
+            InstanzZähler++;
+        }
+    }
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            string[] stringArray = { "Hallo", "Welt", "Was geht?" };
-            string gesuchterWert = "Welt";
+            Beispielklasse.ErhöheStatischenZähler();
 
-            var ergebnis = ÜberprüfeObArrayZeichenfolgeEnthält(stringArray, gesuchterWert);
-            Console.WriteLine(ergebnis);
+            Beispielklasse objekt1 = new Beispielklasse();
+            objekt1.ErhöheAlleZähler();
+            objekt1.ErhöheAlleZähler();
 
-            gesuchterWert = "Foo";
-            ergebnis = ÜberprüfeObArrayZeichenfolgeEnthält(stringArray, gesuchterWert);
-            Console.WriteLine(ergebnis);
-            Console.ReadLine();
+            Beispielklasse objekt2 = new Beispielklasse();
+            objekt2.ErhöheAlleZähler();
+
+            Console.WriteLine(Beispielklasse.StatischerZähler);
+            Console.WriteLine(objekt1.InstanzZähler);
+            Console.WriteLine(objekt2.InstanzZähler);
         }
-
-        static bool ÜberprüfeObArrayZeichenfolgeEnthält(string[] array, string wert)
-        {
-            // Ihr Code folgt hier 
-            bool rückgabewert = false;
-            foreach (string text in array)
-            {
-                if (text == wert)
-                {
-                    rückgabewert = true;
-                    break;
-                }
-            }
-            return rückgabewert;
-        }
-
-
     }
 }
