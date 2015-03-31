@@ -8,8 +8,43 @@ namespace HelloWorld.ConsoleApplication
 {
     public class Person
     {
-        public string Vorname;
-        public string Nachname;
-        public int Alter;
+        private string _vorname;
+        private string _nachname;
+        private int _alter;
+
+        public string Vorname
+        {
+            get { return _vorname; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    return;
+                _vorname = value;
+            }
+        }
+
+        public string Nachname
+        {
+            get { return _nachname; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    return;
+                _nachname = value;
+            }
+        }
+
+        public int Alter
+        {
+            get { return _alter; }
+            set
+            {
+                if (value < 0 || value > 150)
+                    return;
+                _alter = value;
+            }
+        }
+
+        
     }
 }

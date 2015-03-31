@@ -6,39 +6,23 @@ using System.Threading.Tasks;
 
 namespace HelloWorld.ConsoleApplication
 {
-
-
-    public class Beispielklasse
-    {
-        public static int StatischerZähler;
-        public int InstanzZähler;
-
-        public static void ErhöheStatischenZähler()
-        {
-            StatischerZähler++;
-        }
-        public void ErhöheAlleZähler()
-        {
-            StatischerZähler++;
-            InstanzZähler++;
-        }
-    }
     class Program
     {
         static void Main()
         {
-            Beispielklasse.ErhöheStatischenZähler();
+            Person person1 = new Person();
+            person1.Vorname = "Walter";
+            person1.Nachname = "White";
+            person1.Alter = 52;
+            //person1.Alter += 1;
+            person1.Alter++;
 
-            Beispielklasse objekt1 = new Beispielklasse();
-            objekt1.ErhöheAlleZähler();
-            objekt1.ErhöheAlleZähler();
+            PersonMitGetSetMethoden person2 = new PersonMitGetSetMethoden();
+            person2.SetVorname("Jesse");
+            person2.SetNachname("Pinkman");
+            person2.SetAlter(27);
+            person2.SetAlter(person2.GetAlter() + 1);
 
-            Beispielklasse objekt2 = new Beispielklasse();
-            objekt2.ErhöheAlleZähler();
-
-            Console.WriteLine(Beispielklasse.StatischerZähler);
-            Console.WriteLine(objekt1.InstanzZähler);
-            Console.WriteLine(objekt2.InstanzZähler);
         }
     }
 }

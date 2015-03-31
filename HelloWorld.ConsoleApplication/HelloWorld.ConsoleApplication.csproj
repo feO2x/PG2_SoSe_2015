@@ -44,6 +44,7 @@
     <Compile Include="IDGenerator.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonMitGetSetMethoden.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
