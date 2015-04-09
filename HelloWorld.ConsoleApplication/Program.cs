@@ -1,34 +1,67 @@
 ﻿using System;
-using System.Threading;
-using Timer = System.Timers.Timer;
 
 namespace HelloWorld.ConsoleApplication
 {
+    public class A // Basisklasse
+    {
+        protected int _zähler;
+
+        public int Zähler
+        {
+            get { return _zähler; }
+        }
+
+        public void ErhöheZähler()
+        {
+            _zähler++;
+        }
+    }
+
+    public class B : A // Subklasse 
+    {
+        public void ErhöheZählerUmDrei()
+        {
+            _zähler += 3;
+        }
+    }
+
+    public class C : A
+    {
+        public void ErhöheZählerUmFünf()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                ErhöheZähler();
+            }
+        }
+    }
+
     class Program
     {
         static void Main()
         {
-            var meinePerson = new Person("Walter", "White");
-            VeränderePerson(meinePerson);
-            Console.WriteLine(meinePerson.Nachname);
+            B objekt1 = new B();
+            objekt1.ErhöheZähler();
+            objekt1.ErhöheZählerUmDrei();
+            Console.WriteLine(objekt1.Zähler);
 
-            int integerWert = 42;
-            VerändereInteger(ref integerWert);
-            Console.WriteLine(integerWert);
+            A objekt2 = new A();
+            objekt2.ErhöheZähler();
+            Console.WriteLine(objekt2.Zähler);
 
-            var timer = new Timer();
+            A objekt3 = new B(); // Ist-Eine-Beziehung
+            objekt3.ErhöheZähler();
+            // objekt3.ErhöheZählerUmDrei(); Geht nicht, da Variablentyp A ist
+            Console.WriteLine(objekt3.Zähler);
 
-            Thread.Sleep(500);
-        }
+            B objekt4 = (B)objekt3;
+            objekt4.ErhöheZählerUmDrei();
+            A objekt5 = new C();
+            // B objekt6 = (B)objekt5; Exception: falscher Downcast
 
-        private static void VeränderePerson(Person person)
-        {
-            person.Nachname = "Hodor";
-        }
+            B objekt6 = objekt5 as B;
+            B objekt7 = objekt3 as B;
 
-        private static void VerändereInteger(ref int i)
-        {
-            i = 5;
         }
     }
 }
