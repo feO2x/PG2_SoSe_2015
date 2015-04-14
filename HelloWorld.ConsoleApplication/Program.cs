@@ -30,17 +30,15 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main()
         {
-            A objekt1 = new A();
-            objekt1.ErhöheZähler();
-            Console.WriteLine(objekt1.Zähler);
+            Gestalt[] array = new Gestalt[3];
+            array[0] = new Rechteck(4.0, 5.0);
+            array[1] = new Dreieck(4.0, 5.0);
+            array[2] = new Kreis(5.0);
 
-            B objekt2 = new B();
-            objekt2.ErhöheZähler();
-            Console.WriteLine(objekt2.Zähler);
-
-            A objekt3 = new B();
-            objekt3.ErhöheZähler();
-            Console.WriteLine(objekt3.Zähler);
+            foreach (Gestalt gestalt in array)
+            {
+                Console.WriteLine(gestalt.BerechneFläche());
+            }
 
         }
     }
