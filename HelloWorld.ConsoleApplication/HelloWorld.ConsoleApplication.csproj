@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gehaltsrechner.cs" />
     <Compile Include="IDGenerator.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Person.cs" />
