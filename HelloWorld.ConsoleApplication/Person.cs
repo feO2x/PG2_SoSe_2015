@@ -11,30 +11,17 @@ namespace HelloWorld.ConsoleApplication
         private string _vorname;
         private string _nachname;
         private int _alter;
-        private static int _anzahlDerPersonenInstanzen;
 
-        static Person()
+        public Person(string vorname, string nachname)
         {
-            _anzahlDerPersonenInstanzen = 0;
-        }
-
-        public Person(string vorname, string nachname = "DEFAULT")
-        {
-            _anzahlDerPersonenInstanzen++;
 
             if (string.IsNullOrEmpty(vorname))
-                _vorname = "DEFAULT";
-            else
-                _vorname = vorname;
+                throw new ArgumentNullException("vorname");
             if (string.IsNullOrEmpty(nachname))
-                nachname = "DEFAULT";
-            else
-                _nachname = nachname;
-        }
+                throw new ArgumentNullException("nachname");
 
-        public static int AnzahlDerInstanzen
-        {
-            get { return _anzahlDerPersonenInstanzen; }
+            _vorname = vorname;
+            _nachname = nachname;
         }
 
         //public Person(string vorname)
