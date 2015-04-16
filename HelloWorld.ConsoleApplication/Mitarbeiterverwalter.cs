@@ -13,6 +13,27 @@ namespace HelloWorld.ConsoleApplication
         public abstract void SpeichereMitarbeiter(Mitarbeiter[] alleMitarbeiter);
     }
 
+    public interface IMitarbeiterVerwalter
+    {
+        Mitarbeiter[] LadeMitarbeiter();
+        void SpeichereMitarbeiter(Mitarbeiter[] alleMitarbeiter);
+
+    }
+
+    public class DbMitarbeiterVerwalter : IMitarbeiterVerwalter
+    {
+
+        public Mitarbeiter[] LadeMitarbeiter()
+        {
+            // Man könnte hier auf DB zugreifen, Objekte erstellen
+            return new Mitarbeiter[256];
+        }
+
+        public void SpeichereMitarbeiter(Mitarbeiter[] alleMitarbeiter)
+        {
+            // Objekte zu Daten und an DB senden
+        }
+    }
     public class DatenbankMitarbeiterverwalter : Mitarbeiterverwalter
     {
         public override Mitarbeiter[] LadeMitarbeiter()

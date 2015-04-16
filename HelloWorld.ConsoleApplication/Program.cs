@@ -2,27 +2,19 @@
 
 namespace HelloWorld.ConsoleApplication
 {
-    public class A // Basisklasse
+    public class A
     {
-        protected int _zähler;
-
-        public int Zähler
-        {
-            get { return _zähler; }
-        }
-
-        public virtual void ErhöheZähler()
-        {
-            _zähler++;
-        }
+        
     }
 
-    public class B : A // Subklasse 
+    public class B : object
     {
-        public override void ErhöheZähler()
-        {
-            _zähler += 3;
-        }
+        
+    }
+
+    public class C : B
+    {
+        
     }
 
 
@@ -30,16 +22,14 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main()
         {
-            Gestalt[] array = new Gestalt[3];
-            array[0] = new Rechteck(4.0, 5.0);
-            array[1] = new Dreieck(4.0, 5.0);
-            array[2] = new Kreis(5.0);
+            Mitarbeiter mitarbeiter = new Mitarbeiter
+                                      {
+                                          Name = "Walter White",
+                                          AktuellesGehalt = 20000m,
+                                          Verhältnis = Mitarbeiter.Manager
+                                      };
 
-            foreach (Gestalt gestalt in array)
-            {
-                Console.WriteLine(gestalt.BerechneFläche());
-            }
-
+            Console.WriteLine(mitarbeiter.ToString());
         }
     }
 }

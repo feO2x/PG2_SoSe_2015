@@ -45,6 +45,7 @@
     <Compile Include="Gestalt.cs" />
     <Compile Include="IDGenerator.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
+    <Compile Include="Mitarbeiter.cs" />
     <Compile Include="Mitarbeiterverwalter.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonMitGetSetMethoden.cs" />
