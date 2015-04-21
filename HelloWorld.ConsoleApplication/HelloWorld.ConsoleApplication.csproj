@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayEnumerator.cs" />
     <Compile Include="Gehaltsrechner.cs" />
     <Compile Include="Gestalt.cs" />
     <Compile Include="IDGenerator.cs" />
+    <Compile Include="IntStack.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Mitarbeiter.cs" />
     <Compile Include="Mitarbeiterverwalter.cs" />
@@ -51,6 +53,8 @@
     <Compile Include="PersonMitGetSetMethoden.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack.cs" />
+    <Compile Include="StringStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

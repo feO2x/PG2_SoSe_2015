@@ -1,41 +1,33 @@
-﻿using System;
-
+﻿
+using System;
+using System.Collections.Generic;
 namespace HelloWorld.ConsoleApplication
 {
 
     class Program
     {
-        static int Main()
+        static void Main(string[] args)
         {
-            try
+            List<string> stringListe = new List<string>()
             {
-                Console.WriteLine("In Main bevor irgendwas passiert ist");
-                return 42;
-                FunktionA();
-                Console.WriteLine("In Main nach A");
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Im Catch Block");
-                return 0;
-            }
-            finally
-            {
-                Console.WriteLine("Im Finally-BLock");
-            }
+                "Hello", "World"
+            }; // Collection Initialization Syntax
+            Stack<string> stringStack = new Stack<string>(5);
+            stringStack.Push("Hello");
+            stringStack.Push("World");
+
+            GibAufzählungAus(stringListe);
+            GibAufzählungAus(stringStack);
+
         }
 
-        private static void FunktionA()
+        private static void GibAufzählungAus<T>(IEnumerable<T> aufzählung)
         {
-            Console.WriteLine("In A vor B");
-            FunctionB();
-            Console.WriteLine("In B nach A");
-        }
-
-        private static void FunctionB()
-        {
-            if (new Random().Next() % 2 == 0)
-                throw new Exception();
+            foreach (var element in aufzählung)
+            {
+                Console.WriteLine(element);
+            }
         }
     }
+
 }
