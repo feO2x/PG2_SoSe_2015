@@ -5,17 +5,23 @@ namespace HelloWorld.ConsoleApplication
 
     class Program
     {
-        static void Main()
+        static int Main()
         {
             try
             {
                 Console.WriteLine("In Main bevor irgendwas passiert ist");
+                return 42;
                 FunktionA();
                 Console.WriteLine("In Main nach A");
             }
             catch (Exception)
             {
                 Console.WriteLine("Im Catch Block");
+                return 0;
+            }
+            finally
+            {
+                Console.WriteLine("Im Finally-BLock");
             }
         }
 
@@ -28,11 +34,8 @@ namespace HelloWorld.ConsoleApplication
 
         private static void FunctionB()
         {
-            Console.WriteLine("Vor Exception in B");
-            throw "Hallo There";
-            Console.WriteLine("Nach Exception in B");
-
-            Convert.ToInt32
+            if (new Random().Next() % 2 == 0)
+                throw new Exception();
         }
     }
 }
