@@ -8,24 +8,34 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            List<string> stringListe = new List<string>()
+            var unendlicheAufzählung = new UnendlicheAufzählung();
+            foreach (var element in unendlicheAufzählung)
             {
-                "Hello", "World"
-            }; // Collection Initialization Syntax
-            Stack<string> stringStack = new Stack<string>(5);
-            stringStack.Push("Hello");
-            stringStack.Push("World");
-
-            GibAufzählungAus(stringListe);
-            GibAufzählungAus(stringStack);
+                Console.WriteLine(element);
+            }
 
         }
 
         private static void GibAufzählungAus<T>(IEnumerable<T> aufzählung)
         {
-            foreach (var element in aufzählung)
+            //foreach (var element in aufzählung)
+            //{
+            //    Console.WriteLine(element);
+            //}
+
+            IEnumerator<T> enumerator = aufzählung.GetEnumerator();
+
+            try
             {
-                Console.WriteLine(element);
+                while (enumerator.MoveNext())
+                {
+                    T element = enumerator.Current;
+                    Console.WriteLine(element);
+                }
+            }
+            finally
+            {
+                enumerator.Dispose();
             }
         }
     }
