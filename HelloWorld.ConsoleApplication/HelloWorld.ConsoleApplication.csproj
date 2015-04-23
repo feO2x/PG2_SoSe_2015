@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adresse.cs" />
     <Compile Include="ArrayEnumerator.cs" />
+    <Compile Include="Farbe.cs" />
     <Compile Include="Gehaltsrechner.cs" />
     <Compile Include="Gestalt.cs" />
     <Compile Include="IDGenerator.cs" />
