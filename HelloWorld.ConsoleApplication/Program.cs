@@ -8,34 +8,20 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            var unendlicheAufzählung = new UnendlicheAufzählung();
-            foreach (var element in unendlicheAufzählung)
-            {
-                Console.WriteLine(element);
-            }
+            int zahl = 42;
+            string @string = "Hello";
+
+            object objekt = zahl; // Hier passiert implizit Boxing
+
+            int zahl2 = (int)objekt; // hier Unboxing
 
         }
 
         private static void GibAufzählungAus<T>(IEnumerable<T> aufzählung)
         {
-            //foreach (var element in aufzählung)
-            //{
-            //    Console.WriteLine(element);
-            //}
-
-            IEnumerator<T> enumerator = aufzählung.GetEnumerator();
-
-            try
+            foreach (var element in aufzählung)
             {
-                while (enumerator.MoveNext())
-                {
-                    T element = enumerator.Current;
-                    Console.WriteLine(element);
-                }
-            }
-            finally
-            {
-                enumerator.Dispose();
+                Console.WriteLine(element);
             }
         }
     }
