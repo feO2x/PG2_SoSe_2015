@@ -1,4 +1,4 @@
-# PG2_SoSe_2015
+﻿# PG2 Sommersemester 2015
 Dieses Repository enthält den Code zur Vorlesung Programmieren 2 im Sommersemester 2015 (OTH Regensburg).
 
 Sie können den Code online hier auf Github anschauen oder dieses Repository clonen mit dem Link auf der rechten Seite, um
