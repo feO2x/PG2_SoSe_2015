@@ -48,6 +48,7 @@
     <Compile Include="Gestalt.cs" />
     <Compile Include="IDGenerator.cs" />
     <Compile Include="IntStack.cs" />
+    <Compile Include="Kartenfarbe.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Mitarbeiter.cs" />
     <Compile Include="Mitarbeiterverwalter.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="PersonMitGetSetMethoden.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spielkarte.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StringStack.cs" />
     <Compile Include="UnendlicheAufzählung.cs" />
