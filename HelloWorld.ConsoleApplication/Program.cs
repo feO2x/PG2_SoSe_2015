@@ -3,27 +3,16 @@ using System.Collections.Generic;
 using System.Threading;
 namespace HelloWorld.ConsoleApplication
 {
-    public delegate int FunktionMitZahl(int zahl);
-    
     class Program
     {
-        private static AsciiBaum _asciiBaum;
-        private static Timer _timer;
-
         static void Main()
         {
-            _asciiBaum = new AsciiBaum(10);
-            var duration = 500;
-            _timer = new Timer(new TimerCallback(WennTimerTickt), null, duration, duration);
-
-            Console.ReadLine();
+            Func<int, int> @delegate = BerechneQuadrat;
         }
 
-        private static void WennTimerTickt(object state)
+        public static int BerechneQuadrat(int zahl)
         {
-            _asciiBaum.GibNächsteZeileAus();
-            if (_asciiBaum.IsFertig)
-                _timer.Dispose();
+            return zahl * zahl;
         }
 
         
