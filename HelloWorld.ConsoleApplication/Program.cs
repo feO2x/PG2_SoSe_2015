@@ -1,45 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 namespace HelloWorld.ConsoleApplication
 {
+    public delegate int FunktionMitZahl(int zahl);
     
     class Program
     {
+        private static AsciiBaum _asciiBaum;
+        private static Timer _timer;
+
         static void Main()
         {
-            var kartenstapel = new List<Spielkarte>();
+            _asciiBaum = new AsciiBaum(10);
+            var duration = 500;
+            _timer = new Timer(new TimerCallback(WennTimerTickt), null, duration, duration);
 
-            Array alleFarben = Enum.GetValues(typeof(Kartenfarbe));
-            Array alleKartenwerte = Enum.GetValues(typeof(Kartenwert));
-
-            foreach (Kartenfarbe farbe in alleFarben)
-            {
-                foreach (Kartenwert wert in alleKartenwerte)
-                {
-                    kartenstapel.Add(new Spielkarte(farbe, wert));
-                }
-            }
-
-            GibAufzählungAus(kartenstapel);
-
-            MischeKartenstapel(ref kartenstapel);
-
-            GibAufzählungAus(kartenstapel);
+            Console.ReadLine();
         }
 
-        private static void MischeKartenstapel(ref List<Spielkarte> kartenstapel)
+        private static void WennTimerTickt(object state)
         {
-            var random = new Random();
-            var neuerKartenstapel = new List<Spielkarte>();
-
-            while (kartenstapel.Count > 0)
-            {
-                var index = random.Next(kartenstapel.Count);
-                neuerKartenstapel.Add(kartenstapel[index]);
-                kartenstapel.RemoveAt(index);
-            }
-            kartenstapel = neuerKartenstapel;
+            _asciiBaum.GibNächsteZeileAus();
+            if (_asciiBaum.IsFertig)
+                _timer.Dispose();
         }
+
+        
         private static void GibAufzählungAus<T>(IEnumerable<T> aufzählung)
         {
             foreach (var element in aufzählung)
