@@ -58,6 +58,7 @@
     <Compile Include="Mitarbeiterverwalter.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonMitGetSetMethoden.cs" />
+    <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spielkarte.cs" />

@@ -9,26 +9,19 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main()
         {
-            var mitarbeiter = new List<Mitarbeiter>
-                              {
-                                  new Mitarbeiter { Name = "Aaberg, Jesper", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 6000m },
-                                  new Mitarbeiter { Name = "Adams, Ellen", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2050m },
-                                  new Mitarbeiter { Name = "Adams, Terry", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2600m },
-                                  new Mitarbeiter { Name = "Pfeiffer, Michael", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 6300m },
-                                  new Mitarbeiter { Name = "Philips, Carol", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3800m },
-                                  new Mitarbeiter { Name = "Poe, Toni", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 7400 },
-                                  new Mitarbeiter { Name = "Hicks, Cassie", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3550m },
-                                  new Mitarbeiter { Name = "Argentiero, Luca", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2200m },
-                                  new Mitarbeiter { Name = "Perry, Brian", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2800m },
-                                  new Mitarbeiter { Name = "Ramos, Luciana", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 3000m },
-                                  new Mitarbeiter { Name = "Barber, David", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 4000m },
-                                  new Mitarbeiter { Name = "Jamison, Jay", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3750m },
-                              };
+            Point point1 = new Point(42.0, 8.0);  // Konstruktoraufruf für Struktur
 
-            var aufschlüsseler = new MitarbeiterAufschlüsseler();
-            aufschlüsseler.SchlüsseleAuf(mitarbeiter);
+            point1.Y = 5.0;
 
-            Console.ReadLine();
+            Point point2; // Kein new Aufruf zur Initialisierung der Variable
+            point2.X = 42.0; // Stattdessen müssen X und Y manuell gesetzt werden,
+            point2.Y = 5.0; // bevor sie genutzt werden können
+
+            Point point3 = new Point(); // Das ist kein Standardkonstruktoraufruf, sondern ein Strukturinitialisierer; hier werden alle Felder einer Struktur auf ihren Defaultwert gesetzt
+
+            Console.WriteLine(point1);
+            Console.WriteLine(point2);
+            Console.WriteLine(point3);
         }
 
         
