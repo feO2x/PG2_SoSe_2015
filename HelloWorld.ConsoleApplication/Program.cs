@@ -3,35 +3,36 @@ using System.Collections.Generic;
 using System.Threading;
 namespace HelloWorld.ConsoleApplication
 {
+    public delegate void MeineFunktion(ref int value);
+
     class Program
     {
         static void Main()
         {
-            List<Person> personen = new List<Person>
-            {
-                new Person("Walter", "White"),
-                new Person("Jesse", "Pinkman"),
-                new Person("Hank", "Schrader")
-            };
+            Func<int, int, int> lambda1 = (int wert1, int wert2) => { return wert1 + wert2; };
 
-            Action anonymeMethode = delegate()
-            {
-                foreach (var person in personen)
-                {
-                    Console.WriteLine(person);
-                }
-            };
+            Func<int, int, int> lambda2 = (wert1, wert2) => { return wert1 - wert2; };
 
-            anonymeMethode();
+            Func<int, int, int> lambda3 = (wert1, wert2) => wert1 + wert2;
+
+            Func<int, int> lambda4 = wert => wert * wert;
+
+            Action lambda5 = () => Console.WriteLine("Hello World");
+
+            MeineFunktion lambda6 = (ref int wert) => wert++;
+
+            Console.WriteLine(lambda1(42, 24));
+            Console.WriteLine(lambda2(42, 24));
+            Console.WriteLine(lambda3(42, 24));
+            Console.WriteLine(lambda4(9));
+            lambda5();
+
+            var value = 42;
+            lambda6(ref value);
+            Console.WriteLine(value);
         }
 
-        private static void GibPersonenAus(List<Person> liste)
-        {
-            foreach (var person in liste)
-            {
-                Console.WriteLine(person);
-            }
-        }
+        
     }
 
 
