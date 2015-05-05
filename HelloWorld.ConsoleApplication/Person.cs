@@ -67,6 +67,11 @@ namespace HelloWorld.ConsoleApplication
             }
         }
 
+        public override string ToString()
+        {
+            return Vorname + " " + Nachname;
+        }
+
         
     }
 }

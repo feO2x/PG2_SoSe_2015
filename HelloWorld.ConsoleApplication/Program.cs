@@ -3,47 +3,34 @@ using System.Collections.Generic;
 using System.Threading;
 namespace HelloWorld.ConsoleApplication
 {
-    public class Lauscher
-    {
-        public void Hörzu()
-        {
-            Console.WriteLine("Ich hab's gehört");
-        }
-    }
-
     class Program
     {
         static void Main()
         {
-            var metronom = new Metronom();
-            var lauscher = new Lauscher();
+            List<Person> personen = new List<Person>
+            {
+                new Person("Walter", "White"),
+                new Person("Jesse", "Pinkman"),
+                new Person("Hank", "Schrader")
+            };
 
-            metronom.Tick += lauscher.Hörzu;
-            metronom.Tick += Console.Beep;
+            Action anonymeMethode = delegate()
+            {
+                foreach (var person in personen)
+                {
+                    Console.WriteLine(person);
+                }
+            };
 
-            // metronom.Tick = null; geht nicht, da ein Event eingesetzt wird
-
-            metronom.Start();
-
-            Console.ReadLine();
-
-            metronom.Stop();
-
-            Console.ReadLine();
+            anonymeMethode();
         }
 
-        public static int BerechneQuadrat(int zahl)
+        private static void GibPersonenAus(List<Person> liste)
         {
-            return zahl * zahl;
-        }
-
-        
-        private static void GibAufzählungAus<T>(IEnumerable<T> aufzählung)
-        {
-            foreach (var element in aufzählung)
-                Console.WriteLine(element);
-
-            Console.WriteLine();
+            foreach (var person in liste)
+            {
+                Console.WriteLine(person);
+            }
         }
     }
 

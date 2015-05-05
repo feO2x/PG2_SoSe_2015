@@ -50,6 +50,7 @@
     <Compile Include="IDGenerator.cs" />
     <Compile Include="IntStack.cs" />
     <Compile Include="Kartenfarbe.cs" />
+    <Compile Include="Lauscher.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Metronom.cs" />
     <Compile Include="Mitarbeiter.cs" />
