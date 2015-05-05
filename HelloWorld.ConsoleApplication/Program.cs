@@ -9,27 +9,26 @@ namespace HelloWorld.ConsoleApplication
     {
         static void Main()
         {
-            Func<int, int, int> lambda1 = (int wert1, int wert2) => { return wert1 + wert2; };
+            var mitarbeiter = new List<Mitarbeiter>
+                              {
+                                  new Mitarbeiter { Name = "Aaberg, Jesper", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 6000m },
+                                  new Mitarbeiter { Name = "Adams, Ellen", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2050m },
+                                  new Mitarbeiter { Name = "Adams, Terry", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2600m },
+                                  new Mitarbeiter { Name = "Pfeiffer, Michael", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 6300m },
+                                  new Mitarbeiter { Name = "Philips, Carol", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3800m },
+                                  new Mitarbeiter { Name = "Poe, Toni", Verhältnis = Mitarbeiter.Manager, AktuellesGehalt = 7400 },
+                                  new Mitarbeiter { Name = "Hicks, Cassie", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3550m },
+                                  new Mitarbeiter { Name = "Argentiero, Luca", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2200m },
+                                  new Mitarbeiter { Name = "Perry, Brian", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 2800m },
+                                  new Mitarbeiter { Name = "Ramos, Luciana", Verhältnis = Mitarbeiter.Angestellter, AktuellesGehalt = 3000m },
+                                  new Mitarbeiter { Name = "Barber, David", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 4000m },
+                                  new Mitarbeiter { Name = "Jamison, Jay", Verhältnis = Mitarbeiter.Teamleiter, AktuellesGehalt = 3750m },
+                              };
 
-            Func<int, int, int> lambda2 = (wert1, wert2) => { return wert1 - wert2; };
+            var aufschlüsseler = new MitarbeiterAufschlüsseler();
+            aufschlüsseler.SchlüsseleAuf(mitarbeiter);
 
-            Func<int, int, int> lambda3 = (wert1, wert2) => wert1 + wert2;
-
-            Func<int, int> lambda4 = wert => wert * wert;
-
-            Action lambda5 = () => Console.WriteLine("Hello World");
-
-            MeineFunktion lambda6 = (ref int wert) => wert++;
-
-            Console.WriteLine(lambda1(42, 24));
-            Console.WriteLine(lambda2(42, 24));
-            Console.WriteLine(lambda3(42, 24));
-            Console.WriteLine(lambda4(9));
-            lambda5();
-
-            var value = 42;
-            lambda6(ref value);
-            Console.WriteLine(value);
+            Console.ReadLine();
         }
 
         

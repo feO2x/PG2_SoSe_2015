@@ -54,6 +54,7 @@
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Metronom.cs" />
     <Compile Include="Mitarbeiter.cs" />
+    <Compile Include="MitarbeiterAufschlüsseler.cs" />
     <Compile Include="Mitarbeiterverwalter.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonMitGetSetMethoden.cs" />

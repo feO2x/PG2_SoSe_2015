@@ -14,7 +14,7 @@ namespace HelloWorld.ConsoleApplication
                 return mitarbeiter.AktuellesGehalt * 0.5m;
             if (mitarbeiter.Verhältnis == Mitarbeiter.Teamleiter)
                 return mitarbeiter.AktuellesGehalt * 0.2m;
-            if (mitarbeiter.Verhältnis == Mitarbeiter.Angestellte)
+            if (mitarbeiter.Verhältnis == Mitarbeiter.Angestellter)
                 return mitarbeiter.AktuellesGehalt * 0.05m;
 
             return -(mitarbeiter.AktuellesGehalt * 0.2m);

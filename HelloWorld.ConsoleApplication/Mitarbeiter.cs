@@ -4,7 +4,7 @@ namespace HelloWorld.ConsoleApplication
     {
         public const string Manager = "Manager";
         public const string Teamleiter = "Teamleiter";
-        public const string Angestellte = "Angestellte";
+        public const string Angestellter = "Angestellte";
 
         public string Name { get; set; }
         public string Verhältnis { get; set; }
