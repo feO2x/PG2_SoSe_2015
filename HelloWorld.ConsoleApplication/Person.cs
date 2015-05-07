@@ -20,19 +20,9 @@ namespace HelloWorld.ConsoleApplication
             if (string.IsNullOrEmpty(nachname))
                 throw new ArgumentNullException("nachname");
 
-            _vorname = vorname;
-            _nachname = nachname;
+            this._vorname = vorname;
+            this._nachname = nachname;
         }
-
-        //public Person(string vorname)
-        //{
-        //    if (string.IsNullOrEmpty(vorname))
-        //        _vorname = "DEFAULT";
-        //    else
-        //        _vorname = vorname;
-
-        //    _nachname = "DEFAULT";
-        //}
 
         public string Vorname
         {
@@ -40,7 +30,7 @@ namespace HelloWorld.ConsoleApplication
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    return;
+                    throw new ArgumentNullException("value");
                 _vorname = value;
             }
         }
@@ -51,7 +41,7 @@ namespace HelloWorld.ConsoleApplication
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    return;
+                    throw new ArgumentNullException("value");
                 _nachname = value;
             }
         }
@@ -62,9 +52,14 @@ namespace HelloWorld.ConsoleApplication
             set
             {
                 if (value < 0 || value > 150)
-                    return;
+                    throw new ArgumentOutOfRangeException("value");
                 _alter = value;
             }
+        }
+
+        public string VollerName
+        {
+            get { return Vorname + " " + Nachname; }
         }
 
         public override string ToString()
