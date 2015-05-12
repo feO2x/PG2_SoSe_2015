@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="IDGenerator.cs" />
     <Compile Include="IntStack.cs" />
     <Compile Include="Kartenfarbe.cs" />
+    <Compile Include="Kontakt.cs" />
     <Compile Include="Lauscher.cs" />
     <Compile Include="Lottozahlengenerator.cs" />
     <Compile Include="Metronom.cs" />
@@ -69,6 +71,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Example.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

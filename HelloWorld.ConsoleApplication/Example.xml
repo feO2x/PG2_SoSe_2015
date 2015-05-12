@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Kontakte>
+  <Kontakt id="1">
+    <Vorname>Walter</Vorname>
+    <Nachname>White</Nachname>
+    <Email>walter.white@gmail.com</Email>
+    <Telefon>01290239 1200</Telefon>
+  </Kontakt>
+    <Kontakt id="2">
+    <Vorname>Jesse</Vorname>
+    <Nachname>Pinkman</Nachname>
+    <Email>jesse@gmail.com</Email>
+  </Kontakt>
+</Kontakte>
