@@ -1,0 +1,11 @@
+﻿<Window x:Class="HelloWorld.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hello WPF" Height="350" Width="525"
+        FontSize="32">
+    <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+        <Button Content="Klick mich, Baby!" Padding="10 3" Click="WennButtonGedrücktWird" />
+        <TextBlock x:Name="MeinTextBlock" Text="Hier steht was" Margin="0 10 0 0" />
+    </StackPanel>
+</Window>
