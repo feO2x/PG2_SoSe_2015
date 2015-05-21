@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.WpfClient", "Hel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Threadaffinität", "HelloWorld.Threadaffinität\HelloWorld.Threadaffinität.csproj", "{65F330E1-D5A0-4B67-881E-9D0BC9BA367A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Threading", "HelloWorld.Threading\HelloWorld.Threading.csproj", "{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{65F330E1-D5A0-4B67-881E-9D0BC9BA367A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65F330E1-D5A0-4B67-881E-9D0BC9BA367A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65F330E1-D5A0-4B67-881E-9D0BC9BA367A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
