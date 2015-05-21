@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace HelloWorld.Threadaffinität
 {
     public partial class MainWindow : Window
     {
+        private List<int> _divisoren;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -20,18 +23,28 @@ namespace HelloWorld.Threadaffinität
             var untereGrenze = Convert.ToInt32(VonTextBox.Text);
             var obereGrenze = Convert.ToInt32(BisTextBox.Text);
 
-            var divisoren = Enumerable.Range(untereGrenze, obereGrenze - untereGrenze + 1)
+            _divisoren = Enumerable.Range(untereGrenze, obereGrenze - untereGrenze + 1)
                                       .ToList();
 
+            var task = new Task(BerechneAufHintergrundthread);
+            task.Start();
+        }
+
+        private void BerechneAufHintergrundthread()
+        {
             for (long i = 1; i <= int.MaxValue; i++)
             {
-                if (ÜberprüfeTeilbarkeit(i, divisoren))
+                if (ÜberprüfeTeilbarkeit(i, _divisoren))
                 {
-                    ErgebnisTextBlock.Text = "Die gesuchte Zahl ist " + i.ToString("N0");
+                    Dispatcher.BeginInvoke(new Action<long>(ZeigeErgebnis), i);
                     break;
                 }
             }
+        }
 
+        private void ZeigeErgebnis(long ergebnis)
+        {
+            ErgebnisTextBlock.Text = "Die gesuchte Zahl ist " + ergebnis.ToString("N0");
             Button.IsEnabled = true;
             ProgressBar.IsIndeterminate = false;
         }
