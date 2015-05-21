@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace HelloWorld.Threading
 {
@@ -10,11 +11,8 @@ namespace HelloWorld.Threading
             var jetzigerThread = Thread.CurrentThread;
             Console.WriteLine("Start auf Thread " + jetzigerThread.ManagedThreadId);
 
-            var neuerThread = new Thread(ZähleHoch)
-                              {
-                                  Name = "Neuer Thread",
-                                  //IsBackground = true
-                              };
+            var neuerThread = new Task(ZähleHoch);
+
             neuerThread.Start();
 
             Console.ReadLine();
