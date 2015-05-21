@@ -12,11 +12,11 @@
         <StackPanel Grid.Column="1" Margin="5">
             <TextBlock FontFamily="Segoe UI Light" 
                        FontSize="32"
-                       x:Name="NameTextBlock"/>
-            <TextBlock Margin="0 10 0 0" 
-                       x:Name="GeburtsdatumTextBlock"/>
-            <TextBlock x:Name="TelefonTextBlock" />
-            <TextBlock x:Name="MailTextBlock" />
+                       Margin="0 0 0 10"
+                       x:Name="NameTextBlock" Text="Walter White"/>
+            <TextBlock x:Name="GeburtsdatumTextBlock" Text="Geburtsdatum: 04.05.1953"/>
+            <TextBlock x:Name="TelefonTextBlock" Text="Telefon: 1234155 - 99433" />
+            <TextBlock x:Name="MailTextBlock" Text="Email: -" />
         </StackPanel>
     </Grid>
 

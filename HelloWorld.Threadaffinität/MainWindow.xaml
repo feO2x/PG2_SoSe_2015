@@ -1,0 +1,20 @@
+﻿<Window x:Class="HelloWorld.Threadaffinität.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kleinste Vielfache Zahl" SizeToContent="Height" Width="525"
+        FontSize="20">
+    <StackPanel>
+        <TextBlock Text="Kleinste vielfache Zahl" FontFamily="Segoe UI Light"
+                   HorizontalAlignment="Center" Margin="0 20 0 20"
+                   FontSize="36" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 10">
+            <TextBlock Text="Von " Margin="0 1 0 0" />
+            <TextBox x:Name="VonTextBox" Width="40" Text="2" />
+            <TextBlock Text=" bis " Margin="0 1 0 0" />
+            <TextBox x:Name="BisTextBox" Width="40" Text="20" />
+        </StackPanel>
+        <Button x:Name="Button" Width="200" Content="Start" Click="WennButtonGedrücktWird" Margin="0 0 0 10" />
+        <ProgressBar x:Name="ProgressBar" Width="200" Height="31" Margin="0 0 0 10"/>
+        <TextBlock x:Name="ErgebnisTextBlock" Text="Ergebnis:" HorizontalAlignment="Center" Margin="0 0 0 40" />
+    </StackPanel>
+</Window>

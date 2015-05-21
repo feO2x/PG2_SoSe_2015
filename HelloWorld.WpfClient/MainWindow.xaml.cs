@@ -16,12 +16,18 @@ namespace HelloWorld.WpfClient
         public MainWindow()
         {
             InitializeComponent();
+            LeereTextblöcke();
 
             Kontakte = new List<Kontakt>
             {
                 new Kontakt{Vorname = "Walter", Nachname = "White", Geburtsdatum = new DateTime(1958, 5, 20), Email = "walter@white.com"},
                 new Kontakt{Vorname = "Jesse", Nachname = "Pinkman", Geburtsdatum = new DateTime(1987, 4, 25), Telefon = "312124 12332"}
             };
+        }
+
+        private void LeereTextblöcke()
+        {
+            NameTextBlock.Text = GeburtsdatumTextBlock.Text = TelefonTextBlock.Text = MailTextBlock.Text = string.Empty;
         }
 
         private void WennKontaktAusgewähltWird(object sender, SelectionChangedEventArgs e)
