@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,7 +19,7 @@ namespace HelloWorld.WpfClient
             InitializeComponent();
             LeereTextblöcke();
 
-            Kontakte = new List<Kontakt>
+            Kontakte = new ObservableCollection<Kontakt>
             {
                 new Kontakt{Vorname = "Walter", Nachname = "White", Geburtsdatum = new DateTime(1958, 5, 20), Email = "walter@white.com"},
                 new Kontakt{Vorname = "Jesse", Nachname = "Pinkman", Geburtsdatum = new DateTime(1987, 4, 25), Telefon = "312124 12332"}
@@ -42,5 +43,16 @@ namespace HelloWorld.WpfClient
             TelefonTextBlock.Text = "Telefon: " + selektierterKontakt.Telefon;
         }
 
+        private void WennHinzufügenGedrücktWird(object sender, RoutedEventArgs e)
+        {
+            var dialog = new EditiereKontaktFenster
+                         {
+                             EditierterKontakt = new Kontakt()
+                         };
+            if (dialog.ShowDialog() == true)
+            {
+                Kontakte.Add(dialog.EditierterKontakt);
+            }
+        }
     }
 }

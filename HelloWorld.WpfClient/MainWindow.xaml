@@ -7,17 +7,22 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <ListBox x:Name="MasterListBox" SelectionChanged="WennKontaktAusgewähltWird" DisplayMemberPath="VollerName" Margin="5" />
 
         <StackPanel Grid.Column="1" Margin="5">
-            <TextBlock FontFamily="Segoe UI Light" 
-                       FontSize="32"
-                       Margin="0 0 0 10"
-                       x:Name="NameTextBlock" Text="Walter White"/>
+            <TextBlock x:Name="NameTextBlock" Text="Walter White" Style="{StaticResource HeaderTextBlockStyle}"/>
             <TextBlock x:Name="GeburtsdatumTextBlock" Text="Geburtsdatum: 04.05.1953"/>
             <TextBlock x:Name="TelefonTextBlock" Text="Telefon: 1234155 - 99433" />
             <TextBlock x:Name="MailTextBlock" Text="Email: -" />
         </StackPanel>
+        
+        <Button Grid.Row="1" Grid.Column="0" Content="Hinzufügen" Margin="5" 
+                Click="WennHinzufügenGedrücktWird"/>
     </Grid>
 
 </Window>
