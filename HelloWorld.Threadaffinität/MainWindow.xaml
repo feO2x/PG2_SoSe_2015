@@ -14,7 +14,7 @@
             <TextBox x:Name="BisTextBox" Width="40" Text="20" />
         </StackPanel>
         <Button x:Name="Button" Width="200" Content="Start" Click="WennButtonGedrücktWird" Margin="0 0 0 10" />
-        <ProgressBar x:Name="ProgressBar" Width="200" Height="31" Margin="0 0 0 10"/>
+        <ProgressBar x:Name="ProgressBar" Width="200" Height="31" Margin="0 0 0 10" />
         <TextBlock x:Name="ErgebnisTextBlock" Text="Ergebnis:" HorizontalAlignment="Center" Margin="0 0 0 40" />
     </StackPanel>
 </Window>
