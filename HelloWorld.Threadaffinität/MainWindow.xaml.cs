@@ -40,11 +40,21 @@ namespace HelloWorld.Threadaffinität
                     break;
                 }
             }
+
+            Dispatcher.BeginInvoke(new Action<string>(ZeigeErgebnis), "Das Ergebnis konnte nicht berechnet werden.");
+
         }
 
         private void ZeigeErgebnis(long ergebnis)
         {
             ErgebnisTextBlock.Text = "Die gesuchte Zahl ist " + ergebnis.ToString("N0");
+            Button.IsEnabled = true;
+            ProgressBar.IsIndeterminate = false;
+        }
+
+        private void ZeigeErgebnis(string fehlerText)
+        {
+            ErgebnisTextBlock.Text = fehlerText;
             Button.IsEnabled = true;
             ProgressBar.IsIndeterminate = false;
         }
