@@ -7,15 +7,38 @@ using System.Xml;
 
 namespace HelloWorld.ConsoleApplication
 {
-    
-
-    internal class Program
+    class Program
     {
-        private static void Main()
+        static void Main()
         {
-            var reflector = new Reflector();
-            var kontakt = new Kontakt { Nachname = "White", Vorname = "Walter" };
-            reflector.ReflectOn(kontakt);
+            Copy(Ausgabeziel.Datei);
         }
+
+        public static void Copy(Ausgabeziel ausgabeziel)
+        {
+            StreamWriter streamWriter = null;
+            if (ausgabeziel == Ausgabeziel.Datei)
+                streamWriter = new StreamWriter("Datei.txt");
+
+            while (true)
+            {
+                var readKey = Console.ReadKey(true);
+                if (readKey.Key == ConsoleKey.Escape)
+                    break;
+                if (ausgabeziel == Ausgabeziel.Konsole)
+                    Console.Write(readKey.KeyChar);
+                else if(ausgabeziel == Ausgabeziel.Datei)
+                    streamWriter.Write(readKey.KeyChar);
+            }
+
+            if (ausgabeziel == Ausgabeziel.Datei)
+                streamWriter.Close();
+        }
+    }
+
+    internal enum Ausgabeziel
+    {
+        Konsole,
+        Datei
     }
 }
