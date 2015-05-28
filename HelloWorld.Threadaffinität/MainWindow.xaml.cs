@@ -15,7 +15,7 @@ namespace HelloWorld.Threadaffinität
             InitializeComponent();
         }
 
-        private void WennButtonGedrücktWird(object sender, RoutedEventArgs e)
+        private async void WennButtonGedrücktWird(object sender, RoutedEventArgs e)
         {
             Button.IsEnabled = false;
             ProgressBar.IsIndeterminate = true;
@@ -26,37 +26,35 @@ namespace HelloWorld.Threadaffinität
             _divisoren = Enumerable.Range(untereGrenze, obereGrenze - untereGrenze + 1)
                                       .ToList();
 
-            var task = new Task(BerechneAufHintergrundthread);
+            var task = new Task<long>(BerechneAufHintergrundthread);
             task.Start();
+            try
+            {
+                var ergebnis = await task;
+                ErgebnisTextBlock.Text = "Die gesuchte Zahl ist " + ergebnis.ToString("N0");
+            }
+            catch (InvalidOperationException ex)
+            {
+                ErgebnisTextBlock.Text = ex.Message;
+            }
+            
+
+            Button.IsEnabled = true;
+            ProgressBar.IsIndeterminate = false;
         }
 
-        private void BerechneAufHintergrundthread()
+        private long BerechneAufHintergrundthread()
         {
             for (long i = 1; i <= int.MaxValue; i++)
             {
                 if (ÜberprüfeTeilbarkeit(i, _divisoren))
                 {
-                    Dispatcher.BeginInvoke(new Action<long>(ZeigeErgebnis), i);
-                    break;
+                    return i;
                 }
             }
 
-            Dispatcher.BeginInvoke(new Action<string>(ZeigeErgebnis), "Das Ergebnis konnte nicht berechnet werden.");
+            throw new InvalidOperationException("Die gesuchte Zahl ist zu groß für Int32.");
 
-        }
-
-        private void ZeigeErgebnis(long ergebnis)
-        {
-            ErgebnisTextBlock.Text = "Die gesuchte Zahl ist " + ergebnis.ToString("N0");
-            Button.IsEnabled = true;
-            ProgressBar.IsIndeterminate = false;
-        }
-
-        private void ZeigeErgebnis(string fehlerText)
-        {
-            ErgebnisTextBlock.Text = fehlerText;
-            Button.IsEnabled = true;
-            ProgressBar.IsIndeterminate = false;
         }
 
         private bool ÜberprüfeTeilbarkeit(long zahl, List<int> divisoren)
