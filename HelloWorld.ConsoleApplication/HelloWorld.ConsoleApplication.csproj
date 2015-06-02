@@ -45,6 +45,7 @@
     <Compile Include="Adresse.cs" />
     <Compile Include="ArrayEnumerator.cs" />
     <Compile Include="AsciiBaum.cs" />
+    <Compile Include="CopyProcess.cs" />
     <Compile Include="Farbe.cs" />
     <Compile Include="Gehaltsrechner.cs" />
     <Compile Include="Gestalt.cs" />

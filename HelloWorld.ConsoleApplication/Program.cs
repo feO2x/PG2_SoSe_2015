@@ -1,34 +1,95 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 
 namespace HelloWorld.ConsoleApplication
 {
+    public interface IWriter
+    {
+        void Write(char value);
+    }
+
+    public class ConsoleWriter : IWriter
+    {
+
+        public void Write(char value)
+        {
+            Console.Write(value);
+        }
+    }
+
+    public class FileWriter : IWriter, IDisposable
+    {
+        private readonly StreamWriter _streamWriter;
+
+        public FileWriter(string path)
+        {
+            _streamWriter = new StreamWriter(path);
+        }
+
+        public void Write(char value)
+        {
+            _streamWriter.Write(value);
+        }
+
+        public void Dispose()
+        {
+            _streamWriter.Dispose();
+        }
+    }
+
+
     class Program
     {
         static void Main()
         {
-            Copy(Ausgabeziel.Datei);
+            // Composition Root
+            var reader = new ConsoleReader();
+            //var writer = new FileWriter("text.txt");
+            var writer = new ConsoleWriter();
+            var copyProcess = new CopyProcess(reader, writer);
+
+            // Application logic
+            copyProcess.Copy();
+
+            //writer.Dispose();
+        }
+    }
+
+    public interface IReader
+    {
+        ReadInfo ReadKey();
+    }
+
+    public struct ReadInfo
+    {
+        private char _character;
+        private bool _sollEnden;
+
+        public ReadInfo(char character, bool sollEnden)
+        {
+            _character = character;
+            _sollEnden = sollEnden;
         }
 
-        public static void Copy(Ausgabeziel ausgabeziel)
+        public char Character
         {
-            StreamWriter streamWriter = null;
-            if (ausgabeziel == Ausgabeziel.Datei)
-                streamWriter = new StreamWriter("Datei.txt");
+            get { return _character; }
+        }
 
-            while (true)
-            {
-                var readKey = Console.ReadKey(true);
-                if (readKey.Key == ConsoleKey.Escape)
-                    break;
-                if (ausgabeziel == Ausgabeziel.Konsole)
-                    Console.Write(readKey.KeyChar);
-                else if(ausgabeziel == Ausgabeziel.Datei)
-                    streamWriter.Write(readKey.KeyChar);
-            }
+        public bool SollEnden
+        {
+            get { return _sollEnden; }
+        }
+    }
 
-            if (ausgabeziel == Ausgabeziel.Datei)
-                streamWriter.Close();
+    public class ConsoleReader : IReader
+    {
+        public ReadInfo ReadKey()
+        {
+            var consoleKeyInfo = Console.ReadKey(true);
+            return new ReadInfo(consoleKeyInfo.KeyChar,
+                                consoleKeyInfo.Key == ConsoleKey.Escape);
         }
     }
 
