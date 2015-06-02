@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="AdresseObjektgleichheitstests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rechteck.cs" />
+    <Compile Include="RechteckTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloWorld.ConsoleApplication\HelloWorld.ConsoleApplication.csproj">
