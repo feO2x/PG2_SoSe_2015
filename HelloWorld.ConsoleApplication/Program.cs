@@ -36,7 +36,7 @@ namespace HelloWorld.ConsoleApplication
         }
     }
 
-    internal enum Ausgabeziel
+    public enum Ausgabeziel
     {
         Konsole,
         Datei
