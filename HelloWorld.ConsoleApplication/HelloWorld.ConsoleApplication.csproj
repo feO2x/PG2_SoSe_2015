@@ -45,12 +45,17 @@
     <Compile Include="Adresse.cs" />
     <Compile Include="ArrayEnumerator.cs" />
     <Compile Include="AsciiBaum.cs" />
+    <Compile Include="ConsoleReader.cs" />
+    <Compile Include="ConsoleWriter.cs" />
     <Compile Include="CopyProcess.cs" />
     <Compile Include="Farbe.cs" />
+    <Compile Include="FileWriter.cs" />
     <Compile Include="Gehaltsrechner.cs" />
     <Compile Include="Gestalt.cs" />
     <Compile Include="IDGenerator.cs" />
     <Compile Include="IntStack.cs" />
+    <Compile Include="IReader.cs" />
+    <Compile Include="IWriter.cs" />
     <Compile Include="Kartenfarbe.cs" />
     <Compile Include="Kontakt.cs" />
     <Compile Include="Lauscher.cs" />
@@ -65,6 +70,7 @@
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadInfo.cs" />
     <Compile Include="Reflector.cs" />
     <Compile Include="Spielkarte.cs" />
     <Compile Include="Stack.cs" />

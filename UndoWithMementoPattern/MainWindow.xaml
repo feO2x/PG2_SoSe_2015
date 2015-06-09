@@ -1,0 +1,12 @@
+﻿<Window x:Class="UndoWithMementoPattern.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UndoWithMementoPattern"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="Undo"
+                        Executed="CommandBinding_OnExecuted" />
+    </Window.CommandBindings>
+    <local:InkCanvasOriginator x:Name="InkCanvasOriginator"
+                               MouseUp="InkCanvasOriginator_OnMouseUp"/>
+</Window>

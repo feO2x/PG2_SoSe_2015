@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Threadaffinität
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Threading", "HelloWorld.Threading\HelloWorld.Threading.csproj", "{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoWithMementoPattern", "UndoWithMementoPattern\UndoWithMementoPattern.csproj", "{0A71E7EA-47FE-4E55-8BCC-9E1129147799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88B13EEE-42FC-46D2-AE6B-5EAEE7356160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A71E7EA-47FE-4E55-8BCC-9E1129147799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A71E7EA-47FE-4E55-8BCC-9E1129147799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A71E7EA-47FE-4E55-8BCC-9E1129147799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A71E7EA-47FE-4E55-8BCC-9E1129147799}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
