@@ -26,17 +26,17 @@ void DoSomethingByReference(const int& value)
 
 void main()
 {
-	auto value = 5;
-	DoSomething(value);
-	cout << value << endl;
+	int temperaturwerte[] = { 30, 32, 29 };
 
-	DoSomethingByReference(&value);
-	cout << value << endl;
+	for (int& wert : temperaturwerte)
+	{
+		wert = (wert * 9.0 / 5.0) + 32;
+	}
 
-	DoSomethingByReference(value);
-	cout << value << endl;
-
-	DoSomethingByReference(5);
-
+	for (int wert : temperaturwerte)
+	{
+		cout << wert << " ";
+	}
+	cout << endl;
 	
 }
