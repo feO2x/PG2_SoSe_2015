@@ -4,29 +4,39 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-// Const Correctness 
-void TuEtwas(const double * const pYourValue)
+void DoSomething(int value)
 {
-	
+	value += 5;
+	cout << value << endl;
 }
+
+void DoSomethingByReference(int* value)
+{
+	*value += 5;
+	cout << *value << endl;
+}
+
+void DoSomethingByReference(const int& value)
+{
+	/*value += 5;*/
+	cout << value << endl;
+}
+
+
 
 void main()
 {
-	double value1 = 42;
-	const double* pointerToValue1 = &value1;
-	TuEtwas(pointerToValue1);
-	//*pointerToValue1 += 5;
+	auto value = 5;
+	DoSomething(value);
+	cout << value << endl;
 
-	double value2 = 43;
-	double value3 = 44;
-	double * const pointerToValue2 = &value2;
-	//pointerToValue2 = &value3;
-	*pointerToValue2 += 3;
+	DoSomethingByReference(&value);
+	cout << value << endl;
 
-	double const * const pointerToValue4 = new double(42);
-	//pointerToValue4 = &value3;
-	//*pointerToValue4 = 55;
-	delete pointerToValue4;
-	//pointerToValue4 = nullptr;
+	DoSomethingByReference(value);
+	cout << value << endl;
+
+	DoSomethingByReference(5);
+
 	
 }
