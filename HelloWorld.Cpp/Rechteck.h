@@ -1,10 +1,9 @@
 #pragma once
-class Rechteck
+struct Rechteck
 {
-private:
 	int _breite;
 	int _höhe;
-public:
+
 	explicit Rechteck(int seitenlänge)
 		: _breite(seitenlänge), _höhe(seitenlänge)
 	{

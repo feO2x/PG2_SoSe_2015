@@ -6,8 +6,16 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+void VerdoppeleRechteckgröße(Rechteck& rechteck)
+{
+	rechteck._höhe *= 2;
+	rechteck._breite *= 2;
+}
+
 void main()
 {
-	//Rechteck meinRechteck = 4; Geht nicht da Konstruktor explicit
+	Rechteck* rechteck = new Rechteck(5);
+	VerdoppeleRechteckgröße(*rechteck);
 
+	delete rechteck;
 }
