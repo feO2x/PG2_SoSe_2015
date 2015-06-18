@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Person.h"
+#include "Rechteck.h"
 
 using std::cout;
 using std::endl;
@@ -7,12 +8,6 @@ using std::cin;
 
 void main()
 {
-	Person* walter = new Person("Walter", "White", 52);
-	Person jesse("Jesse", "Pinkman", 27);
+	//Rechteck meinRechteck = 4; Geht nicht da Konstruktor explicit
 
-	cout << walter->GetName() << endl;
-	cout << jesse.GetName() << endl;
-	
-	delete walter;
-	walter = nullptr;
 }
