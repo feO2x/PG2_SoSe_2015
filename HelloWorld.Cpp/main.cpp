@@ -1,42 +1,18 @@
 #include <iostream>
+#include "Person.h"
 
 using std::cout;
 using std::endl;
 using std::cin;
 
-void DoSomething(int value)
-{
-	value += 5;
-	cout << value << endl;
-}
-
-void DoSomethingByReference(int* value)
-{
-	*value += 5;
-	cout << *value << endl;
-}
-
-void DoSomethingByReference(const int& value)
-{
-	/*value += 5;*/
-	cout << value << endl;
-}
-
-
-
 void main()
 {
-	int temperaturwerte[] = { 30, 32, 29 };
+	Person* walter = new Person("Walter", "White", 52);
+	Person jesse("Jesse", "Pinkman", 27);
 
-	for (int& wert : temperaturwerte)
-	{
-		wert = (wert * 9.0 / 5.0) + 32;
-	}
-
-	for (int wert : temperaturwerte)
-	{
-		cout << wert << " ";
-	}
-	cout << endl;
+	cout << walter->GetName() << endl;
+	cout << jesse.GetName() << endl;
 	
+	delete walter;
+	walter = nullptr;
 }
