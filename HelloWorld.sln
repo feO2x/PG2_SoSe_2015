@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoWithMementoPattern", "U
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld.Cpp", "HelloWorld.Cpp\HelloWorld.Cpp.vcxproj", "{7FA49A1E-316B-4029-8658-F7A066BB959A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GildedRoseInCpp", "GildedRoseInCpp\GildedRoseInCpp.vcxproj", "{5E353B4F-FB5F-48D0-AE78-B461CC327875}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{7FA49A1E-316B-4029-8658-F7A066BB959A}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{7FA49A1E-316B-4029-8658-F7A066BB959A}.Release|Win32.ActiveCfg = Release|Win32
 		{7FA49A1E-316B-4029-8658-F7A066BB959A}.Release|Win32.Build.0 = Release|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Debug|Win32.Build.0 = Debug|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Release|Any CPU.ActiveCfg = Release|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Release|Win32.ActiveCfg = Release|Win32
+		{5E353B4F-FB5F-48D0-AE78-B461CC327875}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
