@@ -79,6 +79,7 @@
     <ClInclude Include="DefaultStrategy.h" />
     <ClInclude Include="GettingBetterStrategy.h" />
     <ClInclude Include="IArticle.h" />
+    <ClInclude Include="IncreasingWithDecayStrategy.h" />
     <ClInclude Include="IUpdateArticleStrategy.h" />
     <ClInclude Include="LegendaryStrategy.h" />
   </ItemGroup>
@@ -86,6 +87,7 @@
     <ClCompile Include="DefaultStrategy.cpp" />
     <ClCompile Include="GettingBetterStrategy.cpp" />
     <ClCompile Include="IArticle.cpp" />
+    <ClCompile Include="IncreasingWithDecayStrategy.cpp" />
     <ClCompile Include="LegendaryStrategy.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
