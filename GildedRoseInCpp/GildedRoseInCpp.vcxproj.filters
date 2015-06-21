@@ -20,13 +20,13 @@
     <ClInclude Include="DefaultStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GettingBetterStrategy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LegendaryStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IncreasingWithDecayStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IncreasingStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -40,13 +40,13 @@
     <ClCompile Include="DefaultStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GettingBetterStrategy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LegendaryStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IncreasingWithDecayStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IncreasingStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

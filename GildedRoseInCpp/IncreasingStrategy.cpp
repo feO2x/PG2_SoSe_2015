@@ -1,9 +1,9 @@
-#include "GettingBetterStrategy.h"
+#include "IncreasingStrategy.h"
 #include <stdexcept>
 
 using std::invalid_argument;
 
-void GettingBetterStrategy::UpdateArticle(IArticle* article)
+void IncreasingStrategy::UpdateArticle(IArticle* article)
 {
 	if (article == nullptr)
 		throw invalid_argument("article must not be null");
