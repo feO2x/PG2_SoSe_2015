@@ -1,6 +1,6 @@
 #pragma once
+#include "IArticle.h"
 
-class IArticle;
 
 struct IUpdateArticleStrategy
 {

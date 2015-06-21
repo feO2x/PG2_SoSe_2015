@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include "IUpdateArticleStrategy.h"
+
+struct IUpdateArticleStrategy;
 
 class IArticle
 {
@@ -21,10 +22,14 @@ public:
 		return _quality;
 	}
 
+	void SetQuality(int quality);
+
 	inline int GetDurability() const
 	{
 		return _durability;
 	}
+
+	void SetDurability(int durability);
 
 	inline std::string GetName() const
 	{

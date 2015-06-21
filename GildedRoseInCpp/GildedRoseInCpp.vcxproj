@@ -76,11 +76,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DefaultStrategy.h" />
     <ClInclude Include="IArticle.h" />
     <ClInclude Include="IUpdateArticleStrategy.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DefaultStrategy.cpp" />
     <ClCompile Include="IArticle.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
