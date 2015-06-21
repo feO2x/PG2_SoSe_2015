@@ -23,6 +23,9 @@
     <ClInclude Include="GettingBetterStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LegendaryStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IArticle.cpp">
@@ -35,6 +38,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GettingBetterStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LegendaryStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
