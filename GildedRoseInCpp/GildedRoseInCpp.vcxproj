@@ -76,6 +76,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IArticle.h" />
+    <ClInclude Include="IUpdateArticleStrategy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IArticle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
