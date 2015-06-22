@@ -2,16 +2,18 @@
 #include <sstream>
 #include <stdexcept>
 
+using std::string;
 using std::invalid_argument;
 using std::endl;
+using std::stringstream;
 
-void Clothes::AddAdditionalArticleInformation(std::stringstream& stringstream) const
+void Clothes::AddAdditionalArticleInformation(stringstream& stringstream) const
 {
 	stringstream << "Clothing size: " << ClothingSizeToString(_clothingSize) << endl;
 	stringstream << "Number of pockets: " << _numberOfPockets << endl;
 }
 
-Clothes::Clothes(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize)
+Clothes::Clothes(string name, int quality, int durability, IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize)
 	: IArticle(name, quality, durability, strategy), _numberOfPockets(numberOfPockets), _clothingSize(clothingSize)
 {
 	if (numberOfPockets < 0)
