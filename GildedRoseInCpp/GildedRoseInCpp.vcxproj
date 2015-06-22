@@ -76,13 +76,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DamageType.h" />
     <ClInclude Include="DefaultStrategy.h" />
     <ClInclude Include="EnchantedStrategy.h" />
+    <ClInclude Include="HiltType.h" />
     <ClInclude Include="IncreasingStrategy.h" />
     <ClInclude Include="IArticle.h" />
     <ClInclude Include="IncreasingWithDecayStrategy.h" />
     <ClInclude Include="IUpdateArticleStrategy.h" />
     <ClInclude Include="LegendaryStrategy.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultStrategy.cpp" />
@@ -92,6 +95,7 @@
     <ClCompile Include="IncreasingWithDecayStrategy.cpp" />
     <ClCompile Include="LegendaryStrategy.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
