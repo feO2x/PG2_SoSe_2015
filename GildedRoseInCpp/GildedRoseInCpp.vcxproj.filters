@@ -50,6 +50,9 @@
     <ClInclude Include="Food.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Elixir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IArticle.cpp">
@@ -80,6 +83,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Food.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elixir.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -80,6 +80,7 @@
     <ClInclude Include="ClothingSize.h" />
     <ClInclude Include="DamageType.h" />
     <ClInclude Include="DefaultStrategy.h" />
+    <ClInclude Include="Elixir.h" />
     <ClInclude Include="EnchantedStrategy.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="HiltType.h" />
@@ -93,6 +94,7 @@
   <ItemGroup>
     <ClCompile Include="Clothes.cpp" />
     <ClCompile Include="DefaultStrategy.cpp" />
+    <ClCompile Include="Elixir.cpp" />
     <ClCompile Include="EnchantedStrategy.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="IncreasingStrategy.cpp" />
