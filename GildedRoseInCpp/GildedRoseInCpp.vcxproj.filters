@@ -41,6 +41,12 @@
     <ClInclude Include="DamageType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Clothes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClothingSize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IArticle.cpp">
@@ -65,6 +71,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Clothes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
