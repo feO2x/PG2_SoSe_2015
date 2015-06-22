@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ApplicationLogic.h" />
     <ClInclude Include="Clothes.h" />
     <ClInclude Include="ClothingSize.h" />
     <ClInclude Include="DamageType.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ApplicationLogic.cpp" />
     <ClCompile Include="Clothes.cpp" />
     <ClCompile Include="DefaultStrategy.cpp" />
     <ClCompile Include="Elixir.cpp" />
