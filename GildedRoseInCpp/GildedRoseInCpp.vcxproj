@@ -90,6 +90,7 @@
     <ClInclude Include="IncreasingWithDecayStrategy.h" />
     <ClInclude Include="IUpdateArticleStrategy.h" />
     <ClInclude Include="LegendaryStrategy.h" />
+    <ClInclude Include="Tickets.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +105,7 @@
     <ClCompile Include="IncreasingWithDecayStrategy.cpp" />
     <ClCompile Include="LegendaryStrategy.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tickets.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

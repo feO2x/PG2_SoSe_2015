@@ -15,12 +15,12 @@ void IncreasingWithDecayStrategy::UpdateArticle(IArticle* const article) const
 	if (currentDurability <= 0)
 		newQualityValue = 0;
 	else if (currentDurability <= 5)
-		newQualityValue += 2;
-	else if (currentDurability <= 10)
 		newQualityValue += 3;
+	else if (currentDurability <= 10)
+		newQualityValue += 2;
 	else
 		newQualityValue++;
 
-	article->SetDurability(newQualityValue);
+	article->SetQuality(newQualityValue);
 	
 }

@@ -4,6 +4,7 @@
 #include "Elixir.h"
 #include "Food.h"
 #include "Weapon.h"
+#include "Tickets.h"
 #include "DefaultStrategy.h"
 #include "EnchantedStrategy.h"
 #include "IncreasingStrategy.h"
@@ -32,6 +33,7 @@ void main()
 	articles.push_back(new Food("Ancient Brie Cheese", 2, 5, increasing, brieIngredients));
 	articles.push_back(new Elixir("Elixir of the mongoose", 7, 5, standard, 800));
 	articles.push_back(new Weapon("Sulfuras, Sword of Ragnaros", 80, 0, legendary, 111, 143, DamageType::Cut, HiltType::Gold));
+	articles.push_back(new Tickets("Backstage Tickets for the LVL80ETC Concert", 15, 20, increasingWithDecay));
 	vector<string> cakeIngredients = {"Eggs", "Flour", "sugar", "Vanilla sugar", "pieces of apples", "Almonds", "Mana Elixir"};
 	articles.push_back(new Food("Mana cake", 6, 3, enchanted, cakeIngredients));
 
