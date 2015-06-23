@@ -9,6 +9,7 @@
 #include "IncreasingStrategy.h"
 #include "IncreasingWithDecayStrategy.h"
 #include "LegendaryStrategy.h"
+#include "ApplicationLogic.h"
 
 using namespace std;
 
@@ -34,10 +35,12 @@ void main()
 	vector<string> cakeIngredients = {"Eggs", "Flour", "sugar", "Vanilla sugar", "pieces of apples", "Almonds", "Mana Elixir"};
 	articles.push_back(new Food("Mana cake", 6, 3, enchanted, cakeIngredients));
 
+	ApplicationLogic applicationLogic(articles);
+
 	// Run program
+	applicationLogic.Run();
 
 	// Cleanup
-
 	for (auto article : articles)
 	{
 		delete article;
