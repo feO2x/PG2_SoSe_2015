@@ -3,5 +3,5 @@
 
 struct DefaultStrategy : IUpdateArticleStrategy
 {
-	void UpdateArticle(IArticle* article) const override;
+	void UpdateArticle(IArticle* const article) const override;
 };

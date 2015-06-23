@@ -3,7 +3,7 @@
 
 using std::invalid_argument;
 
-void IncreasingStrategy::UpdateArticle(IArticle* article) const
+void IncreasingStrategy::UpdateArticle(IArticle* const article) const
 {
 	if (article == nullptr)
 		throw invalid_argument("article must not be null");
