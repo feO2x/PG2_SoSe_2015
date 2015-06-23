@@ -3,6 +3,6 @@
 
 struct IncreasingStrategy : IUpdateArticleStrategy
 {
-	void UpdateArticle(IArticle* article) override;
+	void UpdateArticle(IArticle* article) const override;
 };
 

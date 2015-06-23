@@ -13,7 +13,7 @@ void Clothes::AddAdditionalArticleInformation(stringstream& stringstream) const
 	stringstream << "Number of pockets: " << _numberOfPockets << endl;
 }
 
-Clothes::Clothes(string name, int quality, int durability, IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize)
+Clothes::Clothes(string name, int quality, int durability, const IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize)
 	: IArticle(name, quality, durability, strategy), _numberOfPockets(numberOfPockets), _clothingSize(clothingSize)
 {
 	if (numberOfPockets < 0)

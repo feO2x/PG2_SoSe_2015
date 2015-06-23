@@ -8,10 +8,10 @@ class IArticle
 	std::string _name;
 	int _quality;
 	int _durability;
-	IUpdateArticleStrategy* const _strategy;
+	const IUpdateArticleStrategy* const _strategy;
 
 protected:
-	IArticle(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy);
+	IArticle(std::string name, int quality, int durability, const IUpdateArticleStrategy& strategy);
 
 	virtual void AddAdditionalArticleInformation(std::stringstream& stringStream) const = 0;
 

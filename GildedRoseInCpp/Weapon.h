@@ -14,7 +14,7 @@ protected:
 	void AddAdditionalArticleInformation(std::stringstream& stringstream) const override;
 
 public:
-	Weapon(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy, int minimumDamage, int maximumDamage, DamageType damageType, HiltType hiltType);
+	Weapon(std::string name, int quality, int durability, const IUpdateArticleStrategy& strategy, int minimumDamage, int maximumDamage, DamageType damageType, HiltType hiltType);
 
 	inline int GetMinimumDamage() const
 	{

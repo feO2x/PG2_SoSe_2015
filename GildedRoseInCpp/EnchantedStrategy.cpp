@@ -3,7 +3,7 @@
 
 using std::invalid_argument;
 
-void EnchantedStrategy::UpdateArticle(IArticle* article)
+void EnchantedStrategy::UpdateArticle(IArticle* article) const
 {
 	if (article == nullptr)
 		throw invalid_argument("article cannot be null");

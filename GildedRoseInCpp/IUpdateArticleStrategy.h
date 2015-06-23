@@ -4,7 +4,7 @@
 
 struct IUpdateArticleStrategy
 {
-	virtual void UpdateArticle(IArticle* article) = 0;
+	virtual void UpdateArticle(IArticle* article) const = 0;
 
 	virtual ~IUpdateArticleStrategy() { }
 };

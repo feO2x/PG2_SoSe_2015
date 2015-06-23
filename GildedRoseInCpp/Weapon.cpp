@@ -14,7 +14,7 @@ void Weapon::AddAdditionalArticleInformation(stringstream& stringstream) const
 	stringstream << "Hilt Type: " << HiltTypeToString(_hiltType) << endl;
 }
 
-Weapon::Weapon(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy, int minimumDamage, int maximumDamage, DamageType damageType, HiltType hiltType)
+Weapon::Weapon(std::string name, int quality, int durability, const IUpdateArticleStrategy& strategy, int minimumDamage, int maximumDamage, DamageType damageType, HiltType hiltType)
 	: IArticle(name, quality, durability, strategy), _minimumDamage(minimumDamage), _maximumDamage(maximumDamage), _damageType(damageType), _hiltType(hiltType)
 {
 	if (minimumDamage > maximumDamage)

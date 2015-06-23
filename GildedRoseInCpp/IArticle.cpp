@@ -6,7 +6,7 @@ using std::string;
 using std::stringstream;
 using std::endl;
 
-IArticle::IArticle(string name, int quality, int durability, IUpdateArticleStrategy& strategy)
+IArticle::IArticle(string name, int quality, int durability, const IUpdateArticleStrategy& strategy)
 	: _name(name), _quality(quality), _durability(durability), _strategy(&strategy)
 {
 

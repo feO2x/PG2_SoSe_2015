@@ -3,7 +3,7 @@
 
 using std::invalid_argument;
 
-void LegendaryStrategy::UpdateArticle(IArticle* article)
+void LegendaryStrategy::UpdateArticle(IArticle* article) const
 {
 	// Nothing to do here, this article is legendary
 }

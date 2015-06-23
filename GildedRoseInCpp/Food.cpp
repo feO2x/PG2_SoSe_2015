@@ -16,7 +16,7 @@ void Food::AddAdditionalArticleInformation(stringstream& stringstream) const
 		stringstream << "  " << ingredient << endl;
 }
 
-Food::Food(string name, int quality, int durability, IUpdateArticleStrategy& strategy, vector<string>& ingredients)
+Food::Food(string name, int quality, int durability, const IUpdateArticleStrategy& strategy, vector<string>& ingredients)
 	: IArticle(name, quality, durability, strategy), _ingredients(ingredients)
 {
 	if (ingredients.size() == 0)

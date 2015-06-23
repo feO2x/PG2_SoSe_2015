@@ -12,7 +12,7 @@ void Elixir::AddAdditionalArticleInformation(stringstream& stringStream) const
 	stringStream << "Size: " << _size << endl;
 }
 
-Elixir::Elixir(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy, int size)
+Elixir::Elixir(std::string name, int quality, int durability, const IUpdateArticleStrategy& strategy, int size)
 	: IArticle(name, quality, durability, strategy), _size(size)
 {
 	if (size < 0)

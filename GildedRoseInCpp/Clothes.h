@@ -11,7 +11,7 @@ protected:
 	void AddAdditionalArticleInformation(std::stringstream& stringstream) const override;
 
 public:
-	Clothes(std::string name, int quality, int durability, IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize);
+	Clothes(std::string name, int quality, int durability, const IUpdateArticleStrategy& strategy, int numberOfPockets, ClothingSize clothingSize);
 
 	inline int GetNumberOfPockets() const
 	{
