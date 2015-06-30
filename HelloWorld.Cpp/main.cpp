@@ -1,19 +1,23 @@
 #include <iostream>
 #include <string>
 #include "Queue.h"
+#include "Rechteck.h"
 using namespace std;
+
+template <class T>
+T max(const T& firstValue, const T& secondValue)
+{
+	return firstValue < secondValue ? secondValue : firstValue;
+}
 
 void main()
 {
-	Queue<int> queue;
+	cout << max(42, 47) << endl;
+	cout << max(33.7, 33.5) << endl;
+	cout << max(true, false) << endl;
 
-	queue.Enqueue(4);
-	queue.Enqueue(5);
+	Rechteck rechteck1(4, 7);
+	Rechteck rechteck2(3, 2);
 
-	cout << "Count of queue is " << queue.GetCount() << endl;
-
-	while (queue.GetCount() > 0)
-	{
-		cout << queue.Dequeue() << endl;
-	}
+	auto größeresRechteck = max(rechteck1, rechteck2);
 }

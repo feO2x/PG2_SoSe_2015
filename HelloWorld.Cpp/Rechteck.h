@@ -15,9 +15,14 @@ struct Rechteck
 	{
 	}
 
-	int BerechneFläche()
+	int BerechneFläche() const
 	{
 		return _breite * _höhe;
+	}
+
+	bool operator <(const Rechteck& anderesRechteck)
+	{
+		return BerechneFläche() < anderesRechteck.BerechneFläche();
 	}
 };
 
