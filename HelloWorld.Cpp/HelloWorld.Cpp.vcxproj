@@ -81,7 +81,9 @@
     <ClCompile Include="Rechteck.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IQueue.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="Rechteck.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
