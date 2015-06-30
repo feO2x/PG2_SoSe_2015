@@ -10,14 +10,25 @@ T max(const T& firstValue, const T& secondValue)
 	return firstValue < secondValue ? secondValue : firstValue;
 }
 
+template <int n>
+struct Fibonacci
+{
+	static const int Value = Fibonacci<n - 1>::Value + Fibonacci<n - 2>::Value;
+};
+
+template<>
+struct Fibonacci<1>
+{
+	static const int Value = 1;
+};
+
+template<>
+struct Fibonacci<0>
+{
+	static const int Value = 0;
+};
+
 void main()
 {
-	cout << max(42, 47) << endl;
-	cout << max(33.7, 33.5) << endl;
-	cout << max(true, false) << endl;
-
-	Rechteck rechteck1(4, 7);
-	Rechteck rechteck2(3, 2);
-
-	auto größeresRechteck = max(rechteck1, rechteck2);
+	auto result = Fibonacci<7>::Value;
 }
