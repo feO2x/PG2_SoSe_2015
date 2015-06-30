@@ -57,4 +57,9 @@ public:
 	{
 		return _count;
 	}
+
+	~Queue()
+	{
+		delete [] _array;
+	}
 };
