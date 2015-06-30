@@ -22,7 +22,7 @@ public:
 		auto newArray = new T[_capacity * 2];
 		for (int i = 0; i < _capacity; i++)
 		{
-			*(newArray+ i) = *(_array + i);
+			newArray[i] = _array[i];
 		}
 		delete [] _array;
 		_array = newArray;
@@ -34,7 +34,7 @@ public:
 		if (_count == _capacity)
 			ExchangeArray();
 
-		*(_array + _count) = item;
+		_array[_count] = item;
 		_count++;
 	}
 
@@ -44,9 +44,9 @@ public:
 			throw std::logic_error("The queue is empty");
 
 		auto returnValue = *_array;
-		for (int i = 0; i < _count - 1; i++)
+		for (auto i = 0; i < _count - 1; i++)
 		{
-			*(_array + i) = *(_array + i + 1);
+			_array[i] = _array[i + 1];
 		}
 		_array[_count - 1] = {};
 		_count--;
