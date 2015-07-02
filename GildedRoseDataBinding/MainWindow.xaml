@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <TextBlock Text="Article Name" FontSize="36" FontFamily="Segoe UI Light"/>
-        <TextBlock Text="Durability: " />
-        <TextBlock Text="Quality: "></TextBlock>
-        <Button Margin="0 5" Content="Update"></Button>
+        <TextBlock Text="{Binding Name}" FontSize="36" FontFamily="Segoe UI Light"/>
+        <TextBlock Text="{Binding Durability, StringFormat=Durability: {0}}" />
+        <TextBlock Text="{Binding Quality, StringFormat=Quality: {0}}"></TextBlock>
+        <Button Margin="0 5" Content="Update" Click="WhenButtonIsClicked"></Button>
     </StackPanel>
 </Window>
