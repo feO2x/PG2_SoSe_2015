@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using GildedRoseDataBinding.Model;
 
 namespace GildedRoseDataBinding
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var clothes = new Clothes(Type.Standard)
+                          {
+                              Name = "Dexterity Vest",
+                              Quality = 20,
+                              Durability = 16
+                          };
+            MainWindow = new MainWindow { DataContext = clothes };
+            MainWindow.Show();
+        }
     }
 }

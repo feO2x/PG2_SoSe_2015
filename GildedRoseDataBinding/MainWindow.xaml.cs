@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GildedRoseDataBinding.Model;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GildedRoseDataBinding
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public Article Article
+        {
+            get { return (Article) DataContext; }
+            set { DataContext = value; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void WhenButtonIsClicked(object sender, RoutedEventArgs e)
+        {
+            var article = Article;
+            if (article == null)
+                return;
+
+            article.Update();
         }
     }
 }

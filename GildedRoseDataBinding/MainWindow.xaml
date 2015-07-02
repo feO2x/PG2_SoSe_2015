@@ -2,7 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Article Name" FontSize="36" FontFamily="Segoe UI Light"/>
+        <TextBlock Text="Durability: " />
+        <TextBlock Text="Quality: "></TextBlock>
+        <Button Margin="0 5" Content="Update"></Button>
+    </StackPanel>
 </Window>
