@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace GildedRoseDataBinding.Model
 {
-    public abstract class Article
+    public abstract class Article : INotifyPropertyChanged
     {
         private int _quality;
         private int _durability;
@@ -28,10 +30,12 @@ namespace GildedRoseDataBinding.Model
                 if (value < 0)
                 {
                     _quality = 0;
+                    OnPropertyChanged();
                     return;
                 }
 
                 _quality = value;
+                OnPropertyChanged();
             }
         }
 
@@ -43,10 +47,12 @@ namespace GildedRoseDataBinding.Model
                 if (value >= 0)
                 {
                     _durability = value;
+                    OnPropertyChanged();
                     return;
                 }
 
                 _durability = 0;
+                OnPropertyChanged();
             }
         }
 
@@ -77,6 +83,14 @@ namespace GildedRoseDataBinding.Model
         public void Update()
         {
             _updateStrategy.UpdateArticle(this);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
